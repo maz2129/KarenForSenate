@@ -14,25 +14,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // connect mongoose to DB
 mongoose.connect('mongodb://localhost:27017/voters', {useNewUrlParser: true});
 
-// Create Schema
-var voterSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    mi: String,
-    birthday: Date,
-    helpType: {
-        register: Boolean,
-        knock: Boolean,
-        phone: Boolean,
-        other: Boolean
-    },
-    age: Number,
-    location: String,
-    phoneNum: Number,
-    lastContacted: Date
-});
-
-var Voter = mongoose.model('Voter', voterSchema);
+// require Voter schema
+var Voter = require('./models/voter.js')
 
 // GET ROUTE
 app.get('/', function(req, res){
