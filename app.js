@@ -1,7 +1,8 @@
 // setup requirements
 var express = require('express'),
     app = express(),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose');
     
 // configure ejs
 app.set("view engine", "ejs");
@@ -10,9 +11,32 @@ app.use(express.static(__dirname + "/public"));
 // confidure body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 
+// connect mongoose to DB
+mongoose.connect('mongodb://localhost:27017/volunteers', {useNewUrlParser: true});
+
+// Create Schema
+var volunteerSchema = new mongoose.Schema({
+    firstName: String,
+    lastName: String,
+    mi: String,
+    birthday: Date,
+    helpType: {
+        register: Boolean,
+        knock: Boolean,
+        phone: Boolean,
+        other: Boolean
+    },
+    age: Number,
+    location: String,
+    phoneNum: Number,
+    lastContacted: Date
+});
+
+var Volunteer = mongoose.model('Volunteer', volunteerSchema);
+
 // GET ROUTE
 app.get('/', function(req, res){
-   res.render('index'); 
+   res.render('index');
 });
 
 // POST ROUTE
