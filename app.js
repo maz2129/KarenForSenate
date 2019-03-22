@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // connect mongoose to DB
-mongoose.connect('mongodb://localhost:27017/volunteers', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/voters', {useNewUrlParser: true});
 
 // Create Schema
 var voterSchema = new mongoose.Schema({
@@ -32,7 +32,7 @@ var voterSchema = new mongoose.Schema({
     lastContacted: Date
 });
 
-var voter = mongoose.model('Voter', voterSchema);
+var Voter = mongoose.model('Voter', voterSchema);
 
 // GET ROUTE
 app.get('/', function(req, res){
@@ -41,15 +41,23 @@ app.get('/', function(req, res){
 
 // POST ROUTE
 app.post('/', function(req, res){
-   var firstName = req.body.firstName;
-   var lastName = req.body.lastName;
-   var mi = req.body.mi;
-   var birthday = req.body.birthday;
-   var register = req.body.register;
-   var knock = req.body.knock;
-   var phone = req.body.phone;
-   var other = req.body.other;
-   res.send(birthday); 
+    Voter.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        mi: req.body.mi,
+        birthday: req.body.birthday,
+        helpType: {
+            register: req.body.register,
+            knock: req.body.knock,
+            phone: req.body.phone,
+            other: req.body.other
+        }
+    }, function(err, voter){
+        if(err)
+            res.send(err);
+        else
+            res.send(voter);
+    });
 });
 
 // have server listen
