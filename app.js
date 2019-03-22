@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect('mongodb://localhost:27017/volunteers', {useNewUrlParser: true});
 
 // Create Schema
-var volunteerSchema = new mongoose.Schema({
+var voterSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     mi: String,
@@ -32,7 +32,7 @@ var volunteerSchema = new mongoose.Schema({
     lastContacted: Date
 });
 
-var Volunteer = mongoose.model('Volunteer', volunteerSchema);
+var voter = mongoose.model('Voter', voterSchema);
 
 // GET ROUTE
 app.get('/', function(req, res){
