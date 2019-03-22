@@ -2,29 +2,61 @@
 <html>
 <head>
 	<title>Karen for Senate</title>
+	<link rel='stylesheet' href='/stylesheets/index.css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>Karen for Senate</h1>
-    <form method='POST'>
-        
-        <input type='text' name='firstName' placeholder='First Name'></input>
-        <input type='text' name='lastName' placeholder='Last Name'></input>
-        <input type='text' name='mi' placeholder='Middle Initial'></input>
-        
-        <input type='date' name='birthday'>
-        
-        <input type='checkbox' name='interests'> Register voters <br>
-        <input type='checkbox' name='interests'> Knock on doors <br>
-        <input type='checkbox' name='interests'> Make phone calls <br>
-        <input type='checkbox' name='interests'> Send text messages <br>
-        <input type='checkbox' name='interests'> Digital outreach <br>
-        <input type='checkbox' name='interests'> Host an event <br>
-        <input type='checkbox' name='interests'> Office administration <br>
-        <input type='checkbox' name='interests'> Video or photograph events <br>
-        <input type='checkbox' name='interests'> Other/not sure/any way I can! <br>
-        
-        <input type='submit'>
-        
-    </form>
+<body id='content'>
+    
+    <div id='navbar'></div>
+    
+    <div class='container'>
+        <div class='row'>
+            
+            <div class='col-5'>
+                <h1 id='title'>Karen for Senate</h1>
+            </div>
+            
+            <div class='col-7'>
+                
+                <div class='text-center'>
+                    <h3>Join Us!</h3>
+                </div>
+                
+                <form method='POST' action='/'>
+                    
+                    <div class='row spacing'>
+                        <input type='text' name='form[firstName]' placeholder='First Name' class='name'></input>
+                        <input type='text' name='form[lastName]' placeholder='Last Name' class='name'></input>
+                        <input type='text' name='form[mi]' placeholder='M.I.' class='initial'></input>
+                    </div>
+                    
+                    <div class='row spacing'>
+                        
+                        <div class='col-6'>
+                            <p>When's your birthday?</p>
+                            <input type='date' name='form[birthday]'>
+                        </div>
+                        
+                        <div class=col-6>
+                            <p>How can you help?</p>
+                            <input type='checkbox' value='form[help][register]'> Register voters <br>
+                            <input type='checkbox' value='form[help][knock]'> Knock on doors <br>
+                            <input type='checkbox' value='form[help][phone]'> Make phone calls <br>
+                            <input type='checkbox' value='form[help][other]'> Other/not sure/any way I can! <br>
+                        </div>
+                        
+                    </div>
+                        
+                        
+                    <div class='text-center spacing'>
+                        <input type='submit' class="btn btn-danger">
+                    </div>
+                
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    
 </body>
 </html>

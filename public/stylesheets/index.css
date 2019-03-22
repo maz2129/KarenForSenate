@@ -1,0 +1,23 @@
+.spacing {
+    margin-top: 25px;
+}
+
+.name {
+    width: 45%;
+}
+
+.initial {
+    width: 10%;
+}
+
+#content {
+    max-width: 1000px;
+    min-width: 800px;
+    margin: auto;
+}
+
+#navbar {
+    background-color: #1b4487;
+    height: 50px;
+    margin-bottom: 60px;
+}
