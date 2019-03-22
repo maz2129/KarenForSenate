@@ -49,7 +49,7 @@ app.post('/', function(req, res){
    var knock = req.body.knock;
    var phone = req.body.phone;
    var other = req.body.other;
-   res.send(birthday); 
+   res.send(knock); 
 });
 
 // have server listen
