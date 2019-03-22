@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // connect mongoose to DB
-mongoose.connect('mongodb://localhost:27017/volunteers', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/voters', {useNewUrlParser: true});
 
 // Create Schema
 var voterSchema = new mongoose.Schema({
@@ -32,7 +32,7 @@ var voterSchema = new mongoose.Schema({
     lastContacted: Date
 });
 
-var voter = mongoose.model('Voter', voterSchema);
+var Voter = mongoose.model('Voter', voterSchema);
 
 // GET ROUTE
 app.get('/', function(req, res){
