@@ -2,8 +2,10 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
-    
+    mongoose = require('mongoose'),
+    seedDB = require('./seeds.js');
+
+seedDB();
 // configure ejs
 app.set("view engine", "ejs");
 // configure public directory
