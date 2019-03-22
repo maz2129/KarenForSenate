@@ -2,8 +2,10 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
-    
+    mongoose = require('mongoose'),
+    seedDB = require('./seeds.js');
+
+seedDB();
 // configure ejs
 app.set("view engine", "ejs");
 // configure public directory
@@ -14,25 +16,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // connect mongoose to DB
 mongoose.connect('mongodb://localhost:27017/voters', {useNewUrlParser: true});
 
-// Create Schema
-var voterSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    mi: String,
-    birthday: Date,
-    helpType: {
-        register: Boolean,
-        knock: Boolean,
-        phone: Boolean,
-        other: Boolean
-    },
-    age: Number,
-    location: String,
-    phoneNum: Number,
-    lastContacted: Date
-});
-
-var Voter = mongoose.model('Voter', voterSchema);
+// require Voter schema
+var Voter = require('./models/voter.js')
 
 // GET ROUTE
 app.get('/', function(req, res){
@@ -41,15 +26,23 @@ app.get('/', function(req, res){
 
 // POST ROUTE
 app.post('/', function(req, res){
-   var firstName = req.body.firstName;
-   var lastName = req.body.lastName;
-   var mi = req.body.mi;
-   var birthday = req.body.birthday;
-   var register = req.body.register;
-   var knock = req.body.knock;
-   var phone = req.body.phone;
-   var other = req.body.other;
-   res.send(knock); 
+    Voter.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        mi: req.body.mi,
+        birthday: req.body.birthday,
+        helpType: {
+            register: req.body.register,
+            knock: req.body.knock,
+            phone: req.body.phone,
+            other: req.body.other
+        }
+    }, function(err, voter){
+        if(err)
+            res.send(err);
+        else
+            res.send(voter);
+    });
 });
 
 // have server listen
