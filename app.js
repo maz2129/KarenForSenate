@@ -5,9 +5,6 @@ var express = require('express'),
     mongoose = require('mongoose'),
     seedDB = require('./seeds.js');
 
-var routes = require('./routes/index.js');
-app.use(routes);
-
 // connect mongoose to DB
 mongoose.connect('mongodb://localhost:27017/voters', {useNewUrlParser: true});
 // seed DB
@@ -18,6 +15,9 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 // configure body-parser
 app.use(bodyParser.urlencoded({extended: true}));
+
+var routes = require('./routes/index.js');
+app.use(routes);
 
 // have server listen
 app.listen(process.env.PORT, process.env.IP, function(){
