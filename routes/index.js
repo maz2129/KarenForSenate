@@ -9,23 +9,33 @@ router.get('/', function(req, res){
 
 // POST ROUTE
 router.post('/', function(req, res){
-    Voter.create({
+    
+    Voter.findOne({
+        // find voter
         firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        mi: req.body.mi,
-        birthday: req.body.birthday,
-        helpType: {
-            register: req.body.register,
-            knock: req.body.knock,
-            phone: req.body.phone,
-            other: req.body.other
-        }
+        lastName: req.body.lastName
     }, function(err, voter){
         if(err)
             res.send(err);
-        else
+        else{
+            // update voter info
+            voter.birthday = req.body.birthday;
+            voter.helpType = helpTypeToBoolean(req.body.helpType);
+            voter.save();
             res.send(voter);
-    });
+        }
+    })
+    
 });
+
+function helpTypeToBoolean(arr) {
+    for(var i=0; i<arr.length; i++){
+        if(arr[i]=='true')
+            arr[i]=true;
+        else
+            arr[i]=false;
+    }
+    return arr;
+}
 
 module.exports = router;
