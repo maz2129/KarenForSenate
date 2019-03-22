@@ -10,14 +10,22 @@ app.use(express.static(__dirname + "/public"));
 // confidure body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 
-// ROUTES
+// GET ROUTE
 app.get('/', function(req, res){
    res.render('index'); 
 });
 
+// POST ROUTE
 app.post('/', function(req, res){
-   var name = req.body.firstName;
-   res.send(name); 
+   var firstName = req.body.firstName;
+   var lastName = req.body.lastName;
+   var mi = req.body.mi;
+   var birthday = req.body.birthday;
+   var register = req.body.register;
+   var knock = req.body.knock;
+   var phone = req.body.phone;
+   var other = req.body.other;
+   res.send(birthday); 
 });
 
 // have server listen
