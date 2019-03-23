@@ -1,17 +1,14 @@
 {
-  "name": "chat-example",
+  "name": "Karen for Senate",
   "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
-  "main": "server.js",
-  "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "description": "Karen volunteer app challenge for The Tuesday Company.",
+  "main": "app.js",
+  "author": "Matt Zinman <maz2129@columbia.edu>",
   "dependencies": {
-    "async": "~0.2.8",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "~4.13.4",
-    "mongoose": "^5.4.19",
-    "socket.io": "~0.9.14"
+    "mongoose": "^5.4.19"
   },
   "devDependencies": {
     "express": "^4.13.4"
