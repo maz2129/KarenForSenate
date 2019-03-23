@@ -5,6 +5,7 @@ var data = [
     {
         firstName: "Matthew",
         lastName: "Zinman",
+        mi: 'A',
         age: 20,
         location: 'New York',
         phoneNum: 9148152199,
@@ -13,6 +14,7 @@ var data = [
     {
         firstName: "Kamala",
         lastName: "Harris",
+        mi: 'D',
         age: 54,
         location: 'Los Angeles, CA',
         phoneNum: 1234567890,
@@ -21,6 +23,7 @@ var data = [
     {
         firstName: "Elizabeth",
         lastName: "Warren",
+        mi: 'A',
         age: 69,
         location: 'Cambridge, MA',
         phoneNum: 0472956381,
@@ -29,6 +32,7 @@ var data = [
     {
         firstName: "Beto",
         lastName: "O'Rourke",
+        mi: 'F',
         age: 46,
         location: 'El Paso, TX',
         phoneNum: 4856294639,

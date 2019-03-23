@@ -16,8 +16,11 @@ app.use(express.static(__dirname + "/public"));
 // configure body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 
-var routes = require('./routes/index.js');
-app.use(routes);
+// add routes to server
+var indexRoutes = require('./routes/index'),
+    dataRoutes = require("./routes/data");
+app.use(indexRoutes);
+app.use(dataRoutes);
 
 // have server listen
 app.listen(process.env.PORT, process.env.IP, function(){

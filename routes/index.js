@@ -36,7 +36,7 @@ function upateVoter(body, voter, res) {
     voter.birthday = body.birthday;
     voter.helpType = helpTypeToBoolean(body.helpType);
     voter.save();
-    res.send(voter);
+    res.render('index');
 }
 
 // adds new voter to DB
@@ -51,7 +51,7 @@ function addVoter(body, voter, res) {
         if(err)
             res.send(err);
         else
-            res.send(newVoter);
+            res.render('index');
     })
 }
 
