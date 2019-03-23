@@ -9,7 +9,6 @@ router.get('/', function(req, res){
 
 // POST ROUTE
 router.post('/', function(req, res){
-    
     Voter.findOne({
         // find voter
         firstName: req.body.firstName,
@@ -18,15 +17,41 @@ router.post('/', function(req, res){
         if(err)
             res.send(err);
         else{
-            // update voter info
-            voter.birthday = req.body.birthday;
-            voter.helpType = helpTypeToBoolean(req.body.helpType);
-            voter.save();
-            res.send(voter);
+            if(voter!=undefined){
+                // update voter info
+                upateVoter(req.body, voter, res);
+            }
+            else {
+                // add new voter to DB
+                addVoter(req.body, voter, res);
+            }
         }
     })
-    
 });
+
+// updates information of a voter already in the DB
+function upateVoter(body, voter, res) {
+    voter.birthday = body.birthday;
+    voter.helpType = helpTypeToBoolean(body.helpType);
+    voter.save();
+    res.send(voter);
+}
+
+// adds new voter to DB
+function addVoter(body, voter, res) {
+    Voter.create({
+        firstName: body.firstName,
+        lastName: body.lastName,
+        mi: body.mi,
+        birthday: body.birthday,
+        helpType: helpTypeToBoolean(body.helpType)
+    }, function(err, newVoter){
+        if(err)
+            res.send(err);
+        else
+            res.send(newVoter);
+    })
+}
 
 // changes the values of the elements of the helpType object from strings
 // to booleans
