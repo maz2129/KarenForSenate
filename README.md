@@ -4,7 +4,7 @@ Matt Zinman
 ## Description
 This application allows voters to sign up to volunteer for an imaginary "Karen for Senate" campaign. The application updates a database that contains fake voter information. When the application is first started, the database contains the following entries:
 
-'''
+```
 {
     firstName: "Matthew",
     lastName: "Zinman",
@@ -41,7 +41,7 @@ This application allows voters to sign up to volunteer for an imaginary "Karen f
     phoneNum: 4856294639,
     lastContacted: 2000-01-01
 }
-'''
+```
 
 To update the database, you can fill out the HTML form on the '/' page. By entering the name of any of these fake voters in the HTML form, you can update their information in the database. If you submit the name of a person who is not already included in the database, the application will create and save a new Voter in the database.
 
@@ -55,16 +55,16 @@ To access this environment, click on [this link](https://ide.c9.io/maz2129/karen
 
 Once you're in the environemnt, move to the top level directory and run mongoDB:
 
-''' 
+```
 cd ..
 ./mongod
-'''
+```
 
 Now that mongoDB is running in the background, you can start the server. Create a new terminal window by pressing "Window" and then "New Terminal." In this new window, start the server:
 
-'''
+```
 node app.js
-'''
+```
 
 You can now access the application in your browser by clicking [this link](https://karen-for-senate-maz2129.c9users.io/).
 
@@ -84,12 +84,16 @@ This application was built using the following:
 ## High Level Architecture
 In this node.js application, an express server uses mongoose to access and modify a mongoDB database. I will give a brief overview of the function of each element of my code.
 
-app.js: When run, this file seeds the database (by calling seeds.js) and then initializes the server.
+Files:
 
-models: this directory contains files for all Schemas in my database.
+- app.js: When run, this file seeds the database (by calling seeds.js) and then initializes the server.
 
-public: this directory contains files for stylizing webpages. Image files and stylesheets belong in here.
+DIRECTORIES:
 
-routes: this directory contains files that handle HTMl requests for all of the routes in my server.
+- models: contains files for all Schemas in my database.
 
-views: this directory contains HTML files that are rendered by the server.
+- public: contains files for stylizing webpages. Image files and stylesheets belong in here.
+
+- routes: contains files that handle HTML requests for all of the routes in my server.
+
+- views: contains HTML files that are rendered by the server.
