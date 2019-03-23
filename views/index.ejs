@@ -25,21 +25,21 @@
                 <form method='POST' action='/'>
                     
                     <div class='row spacing'>
-                        <input type='text' name='firstName' placeholder='First Name' class='name'></input>
-                        <input type='text' name='lastName' placeholder='Last Name' class='name'></input>
-                        <input type='text' name='mi' placeholder='M.I.' class='initial'></input>
+                        <input type='text' name='firstName' placeholder='First Name' class='name' required></input>
+                        <input type='text' name='lastName' placeholder='Last Name' class='name' required></input>
+                        <input type='text' name='mi' placeholder='M.I.' class='initial' required></input>
                     </div>
                     
                     <div class='row spacing'>
                         
                         <div class='col-6'>
                             <p>When's your birthday?</p>
-                            <input type='date' name='birthday'>
+                            <input type='date' name='birthday' required>
                         </div>
                         
                         <div class=col-6>
                             <p>How can you help?</p>
-                            <input type='checkbox' value=true name='helpType[register]' > Register voters <br>
+                            <input type='checkbox' value=true name='helpType[register]'> Register voters <br>
                             <input type='checkbox' value=true name='helpType[knock]'> Knock on doors <br>
                             <input type='checkbox' value=true name='helpType[phone]'> Make phone calls <br>
                             <input type='checkbox' value=true name='helpType[other]'> Other/not sure/any way I can! <br>

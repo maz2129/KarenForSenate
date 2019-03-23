@@ -28,14 +28,18 @@ router.post('/', function(req, res){
     
 });
 
-function helpTypeToBoolean(arr) {
-    for(var i=0; i<arr.length; i++){
-        if(arr[i]=='true')
-            arr[i]=true;
-        else
-            arr[i]=false;
+// changes the values of the elements of the helpType object from strings
+// to booleans
+function helpTypeToBoolean(helpType) {
+    if(helpType!=undefined){
+        for(var i=0; i<helpType.length; i++){
+            if(helpType[i]=='true')
+                helpType[i]=true;
+            else
+                helpType[i]=false;
+        }
     }
-    return arr;
+    return helpType;
 }
 
 module.exports = router;

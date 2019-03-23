@@ -41,16 +41,18 @@ function seedDB(){
     Voter.deleteMany({}, function(err){
         if(err)
             console.log(err);
-        else
+        else {
             console.log('DB cleared');
+            // add data to DB
+            Voter.create(data, function(err, voters){
+                if(err)
+                    console.log(err);
+                else
+                    console.log("DB seeded");
+            });
         }
-    );
-    // add voters to DB
-    console.log('Seeding DB');
-    Voter.create(data, function(err, voters){
-        if(err)
-            console.log(err);
+            
     });
-};
+}
 
 module.exports = seedDB;
