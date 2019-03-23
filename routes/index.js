@@ -14,7 +14,8 @@ router.post('/', function(req, res){
     Voter.findOne({
         // find voter
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        mi: req.body.mi
     }, function(err, voter){
         if(err)
             res.send(err);
