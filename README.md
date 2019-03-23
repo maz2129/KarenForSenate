@@ -4,7 +4,7 @@ Matt Zinman
 ## Description
 This application allows voters to sign up to volunteer for an imaginary "Karen for Senate" campaign.
 
-To update the database, you can fill out the HTML form on the Homepage. If you enter the name of a voter that is not already in the database, the app will create a new entry.
+To volunteer for Karen's campaign, fill out the HTML on the homepage. The server will match your information to an existing voter in the database. If you enter the name of a voter that is not already in the database, the app will create a new entry.
 
 You can monitor the entries in the database by going to the '/data' page. The server will return all Voters in the database.
 
@@ -33,13 +33,13 @@ When you're done using the application, please quit the mongoDB server by pressi
 ## Dependencies
 This application was built using the following:
 
-[body-parser](https://github.com/expressjs/body-parser)
+[body-parser](https://github.com/expressjs/body-parser) to collect and store information in POST requests.
 
-[ejs](https://ejs.co/)
+[ejs](https://ejs.co/) to embed javascript in HTML files.
 
-[express](https://expressjs.com/)
+[express](https://expressjs.com/) to create a server in node.js.
 
-[mongoose](https://mongoosejs.com/)
+[mongoose](https://mongoosejs.com/) to access and modify a mongoDB database.
 
 ## High Level Architecture
 In this node.js application, an express server uses mongoose to access and modify a mongoDB database. I will give a brief overview of the function of each element of my code.
