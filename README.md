@@ -2,51 +2,11 @@
 Matt Zinman
 
 ## Description
-This application allows voters to sign up to volunteer for an imaginary "Karen for Senate" campaign. The application updates a database that contains fake voter information. When the application is first started, the database contains the following entries:
+This application allows voters to sign up to volunteer for an imaginary "Karen for Senate" campaign.
 
-```
-{
-    firstName: "Matthew",
-    lastName: "Zinman",
-    mi: 'A',
-    age: 20,
-    location: 'New York',
-    phoneNum: 9148152199,
-    lastContacted: 2018-04-02
-},
-{
-    firstName: "Kamala",
-    lastName: "Harris",
-    mi: 'D',
-    age: 54,
-    location: 'Los Angeles, CA',
-    phoneNum: 1234567890,
-    lastContacted: 2014-06-03
-},
-{
-    firstName: "Elizabeth",
-    lastName: "Warren",
-    mi: 'A',
-    age: 69,
-    location: 'Cambridge, MA',
-    phoneNum: 0472956381,
-    lastContacted: 2019-01-01
-},
-{
-    firstName: "Beto",
-    lastName: "O'Rourke",
-    mi: 'F',
-    age: 46,
-    location: 'El Paso, TX',
-    phoneNum: 4856294639,
-    lastContacted: 2000-01-01
-}
-```
+To update the database, you can fill out the HTML form on the Homepage. If you enter the name of a voter that is not already in the database, the app will create a new entry.
 
-To update the database, you can fill out the HTML form on the '/' page. By entering the name of any of these fake voters in the HTML form, you can update their information in the database. If you submit the name of a person who is not already included in the database, the application will create and save a new Voter in the database.
-
-I created a route that allows you to easily see the contents of the database without having to search for them in the terminal. If you go to the '/data' route, the server will return a list of every Voter in the database. This allows you to easily monitor how and when elements of the database are modified.
-
+You can monitor the entries in the database by going to the '/data' page. The server will return all Voters in the database.
 
 ## Instructions
 I created this in an online development environment so you can run the code without having to download it and its dependencies.
@@ -84,7 +44,7 @@ This application was built using the following:
 ## High Level Architecture
 In this node.js application, an express server uses mongoose to access and modify a mongoDB database. I will give a brief overview of the function of each element of my code.
 
-Files:
+FILES:
 
 - app.js: When run, this file seeds the database (by calling seeds.js) and then initializes the server.
 
