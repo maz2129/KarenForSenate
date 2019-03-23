@@ -26,7 +26,7 @@ Now that mongoDB is running in the background, you can start the server. Create 
 node app.js
 ```
 
-You can now access the application in your browser by clicking [this link](https://karen-for-senate-maz2129.c9users.io/).
+You can now access the application in your browser by clicking [this link](https://karen-for-senate-maz2129.c9users.io/). You can access the page that contains all database entries [here](https://karen-for-senate-maz2129.c9users.io/data).
 
 When you're done using the application, please quit the mongoDB server by pressing control-C in the mongoDB terminal window.
 
