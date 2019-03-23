@@ -8,6 +8,8 @@ router.get('/', function(req, res){
 });
 
 // POST ROUTE
+// if the voter already exists in the DB, this function updates that voter's info
+// if the voter does not already exist in DB, this funciton creates a new voter in DB
 router.post('/', function(req, res){
     Voter.findOne({
         // find voter
