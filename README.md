@@ -1,7 +1,7 @@
 # Karen volunteer app challenge
 Matt Zinman
 
-Note: GitHub will not let me fork the repository because I am currently only person who has access to it. Once you accept the invitation to be a collaborator, I will fork it.
+Note: GitHub will not let me fork the repository because I am currently the only collaborator. Once you accept the invitation to be a collaborator, I will fork it.
 
 ## Description
 This application allows voters to sign up to volunteer for an imaginary "Karen for Senate" campaign.
