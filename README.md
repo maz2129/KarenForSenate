@@ -1,6 +1,8 @@
 # Karen volunteer app challenge
 Matt Zinman
 
+Note: GitHub will not let me fork the repository because I am currently only person who has access to it. Once you accept the invitation to be a collaborator, I will fork it.
+
 ## Description
 This application allows voters to sign up to volunteer for an imaginary "Karen for Senate" campaign.
 
@@ -11,7 +13,7 @@ You can monitor the entries in the database by going to the '/data' page. The se
 ## Instructions
 I created this in an online development environment so you can run the code without having to download it and its dependencies.
 
-To access this environment, click on [this link](https://ide.c9.io/maz2129/karen-for-senate). Unfortunately, you might have to create an account on Cloud9 if you do not already have one.
+To access this environment, click on [this link](https://ide.c9.io/maz2129/karen-for-senate). The editor is public, but I'm not sure if you will be able to run the application without me giving you reading and writing access. If you have issues running it, please email your Cloud9 username to maz2129@columbia.edu and I will give you read/write access.
 
 Once you're in the environemnt, move to the top level directory and run mongoDB:
 
